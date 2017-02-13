@@ -1,0 +1,136 @@
+.footer
+{
+    position: relative;
+
+    padding: 60px 0;
+
+    color: $white;
+    background-image: url('../images/hero-bg.png');
+    background-position: 50%;
+    background-size: cover;
+    &:before
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        content: '';
+
+        opacity: .7;
+        background-color: #000;
+    }
+    & > *
+    {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+
+
+.subscribe-form
+{
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid #635a51;
+}
+.subscribe__title
+{
+    font-size: 24px;
+
+    margin-bottom: 25px;
+}
+
+.subscribe__content
+{
+    line-height: 57px;
+
+    padding-right: 1px;
+}
+.subscribe__label
+{
+    position: relative;
+
+    padding-left: 40px;
+    i
+    {
+        margin-right: 30px;
+    }
+    &:before
+    {
+        font-family: 'IcoMoon';
+        font-size: 18px;
+
+        position: absolute;
+        left: 0;
+
+        content: '\f003';
+    }
+}
+
+.subscribe__input
+{
+    font-size: 18px;
+    font-weight: 300;
+
+    color: $white;
+    &::-webkit-input-placeholder
+    {
+        color: $white;
+    }
+    &:-ms-input-placeholder
+    {
+        color: $white;
+    }
+}
+
+
+
+
+.footer__info
+{
+    font-size: 0;
+
+    padding-top: 40px;
+}
+.footer__block
+{
+    font: $base-font;
+
+    display: inline-block;
+
+    width: 33.33%;
+
+    text-align: left;
+    vertical-align: top;
+}
+.footer__title
+{
+    font-size: 16px;
+    line-height: 1;
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #635a51;
+}
+.footer__list
+{
+    line-height: 1.7;
+}
+.footer__social
+{
+    margin-bottom: 60px;
+    & > *
+    {
+        font-size: 30px;
+
+        display: inline-block;
+
+        margin-right: 20px;
+    }
+}

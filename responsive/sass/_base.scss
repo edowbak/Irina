@@ -1,0 +1,26 @@
+body {
+	font: $base-font;
+}
+.wrap {}
+.container {
+	position: relative;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.nav {
+	a {
+    color: $font-light;
+    text-transform: uppercase;
+    line-height: 1;
+	}
+}
+
+.main {
+	background-color: $grey-lightest;
+}
+.main-aricles {
+	font-size: 0;
+	padding: 46px 0 35px;
+	border-bottom: 1px solid $grey-lighter;
+}

@@ -1,47 +1,76 @@
-
 .navbar
 {
-    padding: 10px 0;
+    padding: 6px 0;
 
     border-bottom: 1px solid $grey-lighter;
     .container
     {
         font-size: 0;
     }
+    &--open {
+        padding-bottom: 0;
+        .navbar__location,
+        .navbar__filter {
+            display: block;
+            margin-bottom: 6px;
+            @include tablet {
+                display: inline-block;
+                width: 50%;
+            }
+        }
+    }
 }
-.popular,
-.navbar--locations,
-.filter
+.navbar__popular,
+.navbar__location,
+.navbar__filter
 {
-    font-size: 12px;
+    font-size: 13px;
 
-    display: inline-block;
-
-    width: 33.33%;
+    // width: 100%;
 
     vertical-align: middle;
+    @include desktop {
+        width: 33.33%;
+        margin-bottom: 0;
+        font-size: 12px;
+    }
 }
-.popular
+.navbar__popular
 {
+    display: block;
     text-align: left;
+    margin-left: 2%;
+    @include desktop {
+        margin-left: 0;
+        display: inline-block;
+    }
 }
-.popular-item
+.popular__category
 {
     font-weight: bold;
 
     display: inline-block;
 
-    margin-right: 20px;
+    margin-right: 7px;
+    line-height: 45px;
+    padding-top: 3px;
+    @include mobile-small {
+        display: block;
+    }
+    @include desktop {
+        margin-right: 17px;
+    }
 }
-.popular-item__selected a
+.popular__category--selected a
 {
     color: $brand-primary;
 }
-.navbar--locations
+.navbar__location
 {
-    text-align: right;
-    .search-locations {
-        left: 33.33%;
+    text-align: center;
+    display: none;
+    @include desktop {
+        display: inline-block;
     }
     & > *
     {
@@ -50,8 +79,7 @@
 
         display: inline-block;
 
-        margin: 5px;
-        padding: 13px 18px;
+        padding: 10px 16px;
 
         text-transform: uppercase;
 
@@ -60,12 +88,14 @@
     }
 }
 
-.navbar__location
+.select__city
 {
     display: none;
-    line-height: 1.4;
+    text-align: left;
+    min-width: 92px;
+    
 }
-.location__selected
+.select__city--selected
 {
     display: block;
 
@@ -77,15 +107,18 @@
 
         float: right;
 
-        margin-left: 27px;
-
         content: '\f078';
 
         color: $font-light;
     }
 }
 
-.button__map
+.select--open .select__city--selected:after {
+    content: '\e907';
+    margin-top: -3px;
+}
+
+.button--map
 {
     &:before
     {
@@ -99,24 +132,32 @@
         content: '\f041';
     }
 }
-.filter
-{
-    & > *
+.navbar__filter
+{   
+    text-align: center;
+    display: none;
+    @include desktop {
+       text-align: right;
+       display: inline-block;
+    }
+    ul, li
     {
         display: inline-block;
 
         vertical-align: middle;
+        text-align: center;
     }
 }
-.filter-title
+.filter__title
 {
     font-size: 12px;
+    display: inline-block;
 
     text-transform: uppercase;
 
     color: $font-light;
 }
-.filter--item
+.filter__item
 {
     display: inline-block;
     
@@ -124,11 +165,30 @@
 
     width: 40px;
     height: 40px;
+    margin-left: 6px;
+    transition: all 0.3s;
     &:before
     {
         font-size: 20px;
         line-height: 40px;
 
         color: $white;
+    }
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+.navbar__button {
+    position: absolute;
+    right: 2%;
+    top: 4px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid $grey-dark;
+    font-size: 18px;
+    line-height: 36px;
+    color: $grey-dark;
+    @include desktop {
+        display: none;
     }
 }

@@ -5,81 +5,164 @@
     text-align: right;
 
     background-color: #fff;
+    position: relative;
+    padding-top: 50px;
+    &--open {
+        .header__nav {
+        left: 0;
+        }
+    }
+    @include tablet {
+        padding-top: 0;
+    }
     & > *
     {
         font-size: 14px;
-        line-height: 74px;
+        line-height: 50px;
+        @include tablet {
+            line-height: 74px;
 
-        display: inline-block;
+            display: inline-block;
 
-        vertical-align: middle;
+            vertical-align: middle;
+        }
+    }
+    &:after {
+        content: "\e906";
+        font-family: 'IcoMoon';
+        font-weight: normal;
+        font-size: 24px;
+        color: $font;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        line-height: 50px;
+        @include tablet {
+            content: none;
+        }
     }
 }
 .logo
 {
-    float: left;
-
-    margin-left: 10%;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    line-height: 50px;
+    @include tablet-only {
+        img {
+            width: 80%;
+        }
+    }
+    @include tablet {
+        line-height: 74px;
+    }
 }
-
-.header-nav
+@media screen and (min-width: 1180px) {
+    .logo {
+        left: 11.7%;
+    }
+}
+.header__nav
 {
     font-size: 0;
 
     text-align: right;
+    
+    position: absolute;
+    left: -1000px;
+    background-color: $white;
+    width: 85%;
+    z-index: 5;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 5%;
+    transition: all 0.7s ease-out;
+    border-radius: 0 0 30px 30px;
+    @include tablet {
+        display: inline-block;
+        position: static;
+        padding: 0;
+        width: auto;
+    }
 }
-.header-nav--item
+.nav__item
 {
+    display: block;
     font-size: 14px;
     font-weight: bold;
-
-    display: inline-block;
-
-    padding: 0 11px;
-
-    vertical-align: middle;
+    border-bottom: 1px dashed $grey;
+    &:last-of-type {
+        border: none;
+    }
+    @include tablet {
+        display: inline-block;
+        padding: 0 6px;
+        vertical-align: middle;
+        border: none;
+    }
+    @include desktop {
+        padding: 0 10px;
+    }
 }
-
-
-.header--button__search
+.header__button
+{
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    &:before
+    {
+        font-family: 'IcoMoon';
+        font-weight: normal;
+    }
+}
+.header__button--search
 {
     font-size: 0;
 
     box-sizing: border-box;
-    height: 74px;
-
+    
     background-color: $grey-lighter;
+    height: 50px;
+    @include tablet {
+        height: 74px;
+        width: auto;
+    }
     &:before
     {
-        font-family: 'IcoMoon';
         font-size: 24px;
-        font-weight: normal;
 
         padding: 0 25px;
 
         content: '\e903';
     }
 }
-.header--button__user
+.header__button--login
 {
     font-weight: bold;
-
-    width: 25%;
-
     text-align: left;
     text-transform: uppercase;
 
     background-color: $brand-primary;
+    @include tablet-only {
+        width: auto;
+        span {
+            display: none;
+        }
+    }
+    @include desktop {
+        width: 24.4%;
+    }
     &:before
     {
-        font-family: 'IcoMoon';
         font-size: 18px;
-        font-weight: normal;
 
         box-sizing: border-box;
         padding: 0 14px 0 40px;
 
         content: '\e902';
         vertical-align: middle;
+        @include tablet-only {
+            padding: 0 25px;
+        }
     }
 }

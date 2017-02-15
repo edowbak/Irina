@@ -2,7 +2,7 @@
 {
     position: relative;
 
-    padding: 58px 0 40px;
+    padding: 51px 0 40px;
 
     color: $white;
     background-image: url('../images/hero-bg.png');
@@ -35,7 +35,6 @@
     }
     & > *
     {
-        position: relative;
         z-index: 2;
     }
 }
@@ -43,61 +42,63 @@
 {
     text-align: center;
 }
-.search-title
+.search__title
 {
     font-size: 30px;
 
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 
     text-shadow: 0 1px 1px rgba(0, 0, 1, .15);
 }
-// .search-category
-// {
-//     font-family: 'Gotham';
-//     font-size: 18px;
-//     line-height: 50px;
-
-//     display: inline-block;
-
-//     box-sizing: border-box;
-//     padding: 0 20px;
-
-//     text-align: left;
-
-//     color: $white;
-//     border: 1px solid rgba(255, 255, 255, .2);
-//     border-radius: 30px;
-//     &::-webkit-input-placeholder
-//     {
-//         color: $white;
-//     }
-//     &:-ms-input-placeholder
-//     {
-//         color: $white;
-//     }
-// }
-.search-category__city,
-.search-category__type
-{
-    width: 24%;
+.search-group {
+    position: relative;
+    padding-top: 148px;
+    @include tablet {
+        padding-top: 74px;
+    }
 }
-
-.search-category__city
+.search__category
 {
-    left: 25%;
+    width: 96%;
+    top: 0;
+    @include tablet {
+        width: 46%;
+        top: 0;
+    }
+    @include desktop {
+        width: 22.5%;
+    }
+    
 }
-
-.search-category__type
+.search__category--city
 {
-    right: 25%;
+    left: 2%;
+    @include tablet {
+        left: 2%;
+    }
+    @include desktop {
+        left: 26%;
+    }
+}
+.search__category--type
+{
+    right: 2%;
+    top: 74px;
+    @include tablet {
+        right: 2%;
+        top: 0;
+    }
+    @include desktop {
+        right: 26%;
+    }
 }
 .city,
 .type
 {
     display: none;
 }
-.city__selected,
-.type__selected
+.city--selected,
+.type--selected
 {
     display: block;
     &:after
@@ -111,12 +112,21 @@
     }
 }
 
-.search-input
+.search__input
 {
+    line-height: 55px;
+
     display: block;
 
-    width: 50%;
-    margin: 105px auto 28px;
+    width: 96%;
+    margin: 0 auto 28px;
 
     background-color: rgba(255, 255, 255, .1);
+    @include tablet {
+        width: 96%;
+        margin: 0 auto 28px;
+    }
+    @include desktop {
+        width: 48%;
+    }
 }

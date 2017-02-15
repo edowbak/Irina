@@ -1,0 +1,96 @@
+// Offer
+
+.offer
+{
+    font-size: 0;
+
+    padding: 45px 20px 25px;
+    @include tablet {
+        padding: 64px 71px 82px;
+    }
+    @include desktop {
+        padding: 84px 111px 122px;
+    }
+}
+.offer__title
+{
+    font-size: 22px;
+
+    margin-bottom: 3px;
+
+    color: $font;
+}
+.offer__caption
+{
+    font-size: 16px;
+
+    margin-bottom: 30px;
+
+    color: $font-light;
+    @include tablet {
+         margin-bottom: 65px;
+    }
+}
+.offer__icons
+{
+    margin-bottom: 32px;
+}
+
+.offer__title--green
+{
+    margin-bottom: 33px;
+
+    color: $green;
+}
+.offer__text
+{
+    font: $base-font;
+    line-height: 1.8;
+
+    position: relative;
+
+    display: block;
+
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    text-align: left;
+    @include tablet {
+        display: inline-block;
+        width: 50%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    @include desktop {
+        padding-right: 22px;
+        padding-left: 97px;
+     
+        &:before
+        {
+            font-family: 'IcoMoon';
+            font-size: 30px;
+            line-height: 60px;
+
+            position: absolute;
+            left: 3px;
+            top: 9px;
+
+            width: 60px;
+            height: 60px;
+
+            text-align: center;
+
+            color: $white;
+            border-radius: 50px;
+            background-color: $green;
+        }
+        &--flash:before
+        {
+            content: '\f0e7';
+        }
+        &--leaf:before
+        {
+            content: '\f06c';
+        }   
+    }
+}
